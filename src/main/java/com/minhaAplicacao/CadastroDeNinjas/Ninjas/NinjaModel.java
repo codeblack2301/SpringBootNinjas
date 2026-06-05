@@ -1,10 +1,16 @@
-package com.minhaAplicacao.CadastroDeNinjas;
+package com.minhaAplicacao.CadastroDeNinjas.Ninjas;
+
+import org.hibernate.annotations.ManyToAny;
+
+import com.minhaAplicacao.CadastroDeNinjas.Missoes.MissoesModel;
 
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 // entity transforma uma classe em uma entidade do database
@@ -18,6 +24,11 @@ public class NinjaModel {
     private String nome;
     private int idade;
     private String email;
+
+    // @ManyToOne um ninja tem uma unica missao
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // foreing key
+    private MissoesModel missoes;
 
     NinjaModel() {
 

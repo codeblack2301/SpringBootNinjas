@@ -17,7 +17,7 @@ public class NinjaController {
 
     @GetMapping("/boasvindas")
     public String boasvindas() {
-        return "primeira mensagem dessa rota";
+        return "mais uma aplicaçao";
     }
 
 }
